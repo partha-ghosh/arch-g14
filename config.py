@@ -24,10 +24,11 @@ hostname = "jarvis"
 username = "partha"
 
 services = [
-    "NetworkManager",
+    "acpid.service",
+    "NetworkManager.service",
     "autofs.service",
     "avahi-daemon.service",
-    "gdm",
+    "gdm.service",
     # "lightdm.service",
     "fstrim.timer",
 ]
@@ -40,7 +41,7 @@ packages = [
 
     # network manager
     # ===============
-    # "networkmanager",
+    "networkmanager",
     # "network-manager-applet",
 
     # console programs
@@ -62,9 +63,9 @@ packages = [
 
     # xorg
     # ====
-    "xorg",
-    # "xorg-xinit",
-    # "xorg-server",
+    # "xorg",
+    "xorg-xinit",
+    "xorg-server",
     # "xorg-xbacklight",
 
     # window managers
@@ -109,7 +110,6 @@ packages = [
     "mtools",
     # "mtpfs",
     "ntfs-3g",
-    "autofs",
     "gvfs",
 
     # text editors
@@ -117,12 +117,12 @@ packages = [
     # "nano",
     # "neovim",
     "emacs",
-    # "code",
+    "code",
     # "atom",
 
     # web browsers
     # ============
-    "w3m",
+    # "w3m",
     "firefox",
     # "vivaldi",
     # "chromium",
