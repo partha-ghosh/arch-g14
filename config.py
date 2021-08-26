@@ -175,4 +175,5 @@ packages = [
     "bluez",
     "bluez-utils",
     "cups",
+    "asusctl"
 ] + video_drivers
