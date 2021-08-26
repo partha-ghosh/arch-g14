@@ -30,6 +30,7 @@ services = [
     "gdm.service",
     "bluetooth.service",
     # "lightdm.service",
+    "cups.service",
     "fstrim.timer",
     "nvidia-suspend.service",
     "nvidia-resume.service",
@@ -168,10 +169,9 @@ packages = [
     "python-virtualenv",
     "keepassxc",
     "gparted",
-    "git",
-    "sudo",
     
     "acpid",
     "bluez",
     "bluez-utils",
+    "cups",
 ] + video_drivers
