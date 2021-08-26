@@ -31,6 +31,7 @@ exec_cmd(
 exec_cmd("genfstab -U /mnt >> /mnt/etc/fstab")
 
 exec_cmd("cp /etc/pacman.conf /mnt/etc/pacman.conf")
+exec_cmd("mv mkinitcpio.conf /mnt/etc/mkinitcpio.conf")
 exec_cmd("mv chroot.py /mnt")
 exec_cmd("mv config.py /mnt")
 exec_cmd("mv aur.py /mnt")
