@@ -3,7 +3,7 @@ import re
 from config import *
 
 # time zone setup
-exec_cmd("ln -sf /usr/share/zoneinfo/Asia/Kolkata /etc/localtime")
+exec_cmd("ln -sf /usr/share/zoneinfo/Europe/Berlin /etc/localtime")
 exec_cmd("hwclock --systohc")
 
 # localization
