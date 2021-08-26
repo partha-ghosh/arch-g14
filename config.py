@@ -34,8 +34,8 @@ services = [
     "fstrim.timer",
     "nvidia-suspend.service",
     "nvidia-resume.service",
-    "nvidia-hibernate.service",
-    "asus-notify.service"
+    "nvidia-hibernate.service"
+
 ]
 
 packages = [
