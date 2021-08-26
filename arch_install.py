@@ -20,7 +20,7 @@ exec_cmd("mount " + efi + " /mnt/boot")
 exec_cmd('''cat >> /etc/pacman.conf <<EOF
 [g14]
 SigLevel = Optional TrustAll
-Server = https://arch.retarded.farm
+Server = https://arch.asus-linux.org
 EOF
 ''')
 
