@@ -54,12 +54,7 @@ if bootloader == 'grub':
     exec_cmd("grub-mkconfig -o /boot/grub/grub.cfg") 
 
 exec_cmd("su - " + username)
-exec_cmd('export MAKEFLAGS="-j16"')
-exec_cmd("mkdir aur && cd aur")
-exec_cmd("git clone https://aur.archlinux.org/rog-core.git && cd rog-core && makepkg -si && cd ..")
-exec_cmd("sudo systemctl enable rog-core.service")
-exec_cmd("git clone https://aur.archlinux.org/asusctl-git.git && cd  asusctl-git && makepkg -si && cd ..")
-exec_cmd("asusctl -c 60")
+
 
 exec_cmd("systemctl enable " + " ".join(services))
 
