@@ -3,18 +3,13 @@ import os
 
 def exec_cmd(cmd):
     print("\n" + cmd + "\n")
+    input("Press Enter")
     os.system(cmd)
 
-
-will_reinstall = False
-reinstalling = False
 format_home = False
-efi = "/dev/sdb5"
-root = "/dev/sdb6"
-home = "/dev/sda2"
-swap = "/dev/sda4"
-swapfile = True
-swapsize = 16  # GB
+efi = "/dev/nvme0n1p1"
+root = "/dev/nvme0n1p2"
+home = "/dev/nvme0n1p5"
 
 # cpu = "intel"
 cpu = "amd"
@@ -25,7 +20,7 @@ bootloader = "grub"
 # video_drivers = ["xf86-video-intel", "xf86-video-ati"]
 video_drivers = ["nvidia", "nvidia-settings", "nvidia-utils"]
 
-hostname = "hal"
+hostname = "jarvis"
 username = "partha"
 
 services = [
