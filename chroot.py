@@ -53,7 +53,7 @@ if bootloader == 'grub':
     )
     exec_cmd("grub-mkconfig -o /boot/grub/grub.cfg") 
 
-exec_cmd("su - " + username)
+
 
 
 exec_cmd("systemctl enable " + " ".join(services))
