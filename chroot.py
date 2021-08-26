@@ -30,8 +30,7 @@ blacklist i2c_nvidia_gpu
 ''')
 
 with open("/etc/modprobe.d/g14-nvidia.conf", "w") as f:
-    f.write('''options nvidia_drm modeset=1
-options nvidia "NVreg_DynamicPowerManagement=0x02"
+    f.write('''options nvidia "NVreg_DynamicPowerManagement=0x02"
 ''')
     
 # Initramfs
