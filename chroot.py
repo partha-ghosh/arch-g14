@@ -30,7 +30,8 @@ blacklist i2c_nvidia_gpu
 ''')
 
 with open("/etc/modprobe.d/g14-nvidia.conf", "w") as f:
-    f.write('''options nvidia "NVreg_DynamicPowerManagement=0x02"
+    f.write('''options nvidia_drm modeset=1
+options nvidia "NVreg_DynamicPowerManagement=0x02"
 ''')
     
 # Initramfs
@@ -58,6 +59,7 @@ exec_cmd("mkdir aur && cd aur")
 exec_cmd("git clone https://aur.archlinux.org/rog-core.git && cd rog-core && makepkg -si && cd ..")
 exec_cmd("sudo systemctl enable rog-core.service")
 exec_cmd("git clone https://aur.archlinux.org/asusctl-git.git && cd  asusctl-git && makepkg -si && cd ..")
+exec_cmd("asusctl -c 60")
 
 exec_cmd("systemctl enable " + " ".join(services))
 
