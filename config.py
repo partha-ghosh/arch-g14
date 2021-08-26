@@ -18,7 +18,7 @@ cpu = "amd"
 bootloader = "grub"
 
 # video_drivers = ["xf86-video-intel", "xf86-video-ati"]
-video_drivers = ["nvidia", "nvidia-settings", "nvidia-utils"]
+video_drivers = ["xf86-video-amdgpu", "nvidia-dkms", "nvidia-utils", "nvidia-settings", "nvidia-prime"]
 
 hostname = "jarvis"
 username = "partha"
@@ -26,11 +26,14 @@ username = "partha"
 services = [
     "acpid.service",
     "NetworkManager.service",
-    "autofs.service",
     "avahi-daemon.service",
     "gdm.service",
+    "bluetooth.service",
     # "lightdm.service",
     "fstrim.timer",
+    "nvidia-suspend.service",
+    "nvidia-resume.service",
+    "nvidia-hibernate.service"
 ]
 
 packages = [
@@ -63,9 +66,9 @@ packages = [
 
     # xorg
     # ====
-    # "xorg",
-    "xorg-xinit",
-    "xorg-server",
+    "xorg",
+    # "xorg-xinit",
+    # "xorg-server",
     # "xorg-xbacklight",
 
     # window managers
@@ -99,8 +102,9 @@ packages = [
 
     # sound server
     # ============
-    # "pulseaudio",
-    # "pulseaudio-alsa",
+    "pulseaudio",
+    "pulseaudio-alsa",
+    # "pulseaudio-bluetooth",
     # "alsa-utils",
     # "alsa-plugins",
 
@@ -134,14 +138,15 @@ packages = [
 
     # fonts
     # =====
+    "ttf-dejavu",
     # "ttf-inconsolata", "ttf-fira-mono", "ttf-fira-code", "ttf-dejavu",
     # "ttf-roboto", "noto-fonts", "ttf-ubuntu-font-family", "gnu-free-fonts",
     # "adobe-source-code-pro-fonts", "ttf-linux-libertine",
 
     # graphics tools
     # ==============
-    "inkscape",
-    "gimp",
+    # "inkscape",
+    # "gimp",
     # "blender",
     # "krita",
     # "obs-studio",
@@ -162,5 +167,11 @@ packages = [
     # "redshift",
     "python-virtualenv",
     "keepassxc",
-    "gparted"
+    "gparted",
+    "git",
+    "sudo",
+    
+    "acpid",
+    "bluez",
+    "bluez-utils",
 ] + video_drivers
