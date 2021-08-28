@@ -48,7 +48,7 @@ exec_cmd("pacman -Syyu " + " ".join(packages))
 
 if bootloader == 'grub':
     exec_cmd(
-        "grub-install --target=x86_64-efi --bootloader-id=GRUB --efi-directory=/boot" + (' --removale --recheck' if removable else '') 
+        "grub-install --target=x86_64-efi --bootloader-id=GRUB --efi-directory=/boot" + (' --removable --recheck' if removable else '') 
     )
     exec_cmd("grub-mkconfig -o /boot/grub/grub.cfg") 
 
