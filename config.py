@@ -6,6 +6,7 @@ def exec_cmd(cmd):
     input("Press Enter")
     os.system(cmd)
 
+removable = False
 format_home = False
 efi = "/dev/nvme0n1p1"
 root = "/dev/nvme0n1p2"
