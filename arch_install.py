@@ -12,10 +12,11 @@ if format_home:
 
 # mount partitions
 exec_cmd("mount " + root + " /mnt")
-exec_cmd("mkdir /mnt/home")
-exec_cmd("mount " + home + " /mnt/home")
 exec_cmd("mkdir -p /mnt/boot")
 exec_cmd("mount " + efi + " /mnt/boot")
+if home:
+    exec_cmd("mkdir /mnt/home")
+    exec_cmd("mount " + home + " /mnt/home")
 
 exec_cmd('''cat >> /etc/pacman.conf <<EOF
 [g14]
