@@ -6,9 +6,9 @@ exec_cmd("timedatectl set-ntp true")
 
 # format partitions
 exec_cmd("mkfs.fat -F32 " + efi)
-exec_cmd("mkfs.ext4 " + '-O "^has_journal" ' if removable else "" + root)
+exec_cmd("mkfs.ext4 " + ('-O "^has_journal" ' if removable else "") + root)
 if format_home:
-    exec_cmd("mkfs.ext4 " + '-O "^has_journal" ' if removable else "" +home)
+    exec_cmd("mkfs.ext4 " + ('-O "^has_journal" ' if removable else "") +home)
 
 # mount partitions
 exec_cmd("mount " + root + " /mnt")
