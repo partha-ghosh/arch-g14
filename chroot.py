@@ -54,4 +54,12 @@ if bootloader == 'grub':
 
 exec_cmd("systemctl enable " + " ".join(services))
 
+if removable:
+    exec_cmd("mkdir /etc/systemd/journald.conf.d")
+    with open("/etc/systemd/journald.conf.d/external.conf", "w") as f:
+        f.write('''[Journal]
+Storage=volatile
+RuntimeMaxUse=30M
+''')
+
 exec_cmd("exit")
