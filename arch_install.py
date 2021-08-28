@@ -6,9 +6,9 @@ exec_cmd("timedatectl set-ntp true")
 
 # format partitions
 exec_cmd("mkfs.fat -F32 " + efi)
-exec_cmd("mkfs.ext4 " + root)
+exec_cmd("mkfs.ext4 " + '-O "^has_journal" ' if removable else "" + root)
 if format_home:
-    exec_cmd("mkfs.ext4 " + home)
+    exec_cmd("mkfs.ext4 " + '-O "^has_journal" ' if removable else "" +home)
 
 # mount partitions
 exec_cmd("mount " + root + " /mnt")
@@ -32,7 +32,10 @@ exec_cmd(
 exec_cmd("genfstab -U /mnt >> /mnt/etc/fstab")
 
 exec_cmd("cp /etc/pacman.conf /mnt/etc/pacman.conf")
-exec_cmd("mv mkinitcpio.conf /mnt/etc/mkinitcpio.conf")
+if removable:
+    exec_cmd("mv mkinitcpio_removable.conf /mnt/etc/mkinitcpio.conf")
+else:
+    exec_cmd("mv mkinitcpio.conf /mnt/etc/mkinitcpio.conf")
 exec_cmd("mv chroot.py /mnt")
 exec_cmd("mv config.py /mnt")
 exec_cmd("arch-chroot /mnt python ./chroot.py")
