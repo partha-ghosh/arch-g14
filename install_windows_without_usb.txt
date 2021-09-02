@@ -1,0 +1,9 @@
+For installing windows without USB stick
+Press `c` in grub menu
+> ls
+# list all the partition
+> ls (hd0,msdos4)
+# gives the details of the partition
+> set root=(hd0,msdos4)
+> chainloader (hd0,msdos4)/efi/boot/bootx64.efi
+> boot
