@@ -176,5 +176,6 @@ packages = [
     "bluez",
     "bluez-utils",
     "cups",
-    "asusctl"
+    "asusctl",
+    "archlinux-keyring"
 ] + video_drivers
