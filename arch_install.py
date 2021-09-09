@@ -30,7 +30,7 @@ EOF
 
 exec_cmd(
     "pacstrap -i /mnt base base-devel linux-g14 linux-g14-headers linux-firmware python git sudo pacman-contrib nano vim "
-    + cpu + "-ucode")
+    + ((cpu + "-ucode") if format_efi else ""))
 
 exec_cmd("genfstab -U /mnt >> /mnt/etc/fstab")
 
