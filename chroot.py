@@ -45,6 +45,8 @@ exec_cmd("passwd " + username)
 exec_cmd("EDITOR=nano visudo")
 
 exec_cmd("pacman -Syyu " + " ".join(packages))
+exec_cmd(f"cd /tmp && sudo -u {username} git clone https://aur.archlinux.org/yay.git && cd yay && sudo -u {username} makepkg -si")
+exec_cmd(f"sudo -u {username} yay -S " + " ".join(aur))
 
 if bootloader == 'grub':
     exec_cmd(

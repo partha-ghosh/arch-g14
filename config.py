@@ -168,13 +168,14 @@ packages = [
     # "zathura", "zathura-pdf-poppler", "zathura-djvu", "zathura-ps",
     # "okular",
     # "evince",
+    # "texmacs",
 
     # misc
     # ====
     # "nodejs",
     # "npm",
     # "python-pynvim",
-    # "redshift",
+    "redshift",
     "python-virtualenv",
     "keepassxc",
     "gparted",
@@ -186,3 +187,10 @@ packages = [
     "asusctl",
     "archlinux-keyring"
 ] + video_drivers
+
+aur = [
+    "google-chrome",
+    "write_stylus",
+    "spotify",
+    "zoom"
+]
