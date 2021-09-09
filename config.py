@@ -11,7 +11,7 @@ format_home = False
 format_efi = False
 efi = "/dev/nvme0n1p1"
 root = "/dev/nvme0n1p2"
-home = "/dev/nvme0n1p5"
+home = "/dev/nvme0n1p3"
 
 # cpu = "intel"
 cpu = "amd"
@@ -104,6 +104,13 @@ packages = [
     # "mate-extra",
     # "lightdm",
     # "lightdm-gtk-greeter",
+    # KDE
+    # ===
+    # "plasma",
+    # "kde-applications",
+    # "sddm",
+    # "packagekit-qt5",
+
 
     # video drivers
     # =============
@@ -127,7 +134,7 @@ packages = [
     # ============
     "dosfstools",
     "mtools",
-    # "mtpfs",
+    "mtpfs",
     "ntfs-3g",
     "gvfs",
 
@@ -160,20 +167,21 @@ packages = [
 
     # graphics tools
     # ==============
-    # "inkscape",
-    # "gimp",
-    # "blender",
-    # "krita",
-    # "obs-studio",
+    "inkscape",
+    "gimp",
+    "blender",
+    "krita",
+    "obs-studio",
 
     # doc tools
     # =========
-    # "texlive-most",
-    # "pandoc",
+    "texlive-most",
+    "pandoc",
+    "calibre",
+    "texmacs",
     # "zathura", "zathura-pdf-poppler", "zathura-djvu", "zathura-ps",
     # "okular",
     # "evince",
-    # "texmacs",
 
     # misc
     # ====
