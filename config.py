@@ -16,12 +16,6 @@ home = "/dev/nvme0n1p5"
 # cpu = "intel"
 cpu = "amd"
 
-# bootloader = "systemd-boot"
-bootloader = "grub"
-
-# video_drivers = ["xf86-video-intel", "xf86-video-ati"]
-video_drivers = ["xf86-video-amdgpu", "nvidia-dkms", "nvidia-utils", "nvidia-settings", "nvidia-prime"]
-
 hostname = "jarvis"
 username = "partha"
 
@@ -55,7 +49,7 @@ packages = [
     # console programs
     # ================
     "bash-completion",
-    "ranger",
+    #"ranger",
     "p7zip",
 
     # file sharing
@@ -99,16 +93,27 @@ packages = [
     # "gnome-extra",
     # XFCE
     # ====
-    # "xfce4",
-    # "xfce4-goodies",
-    # "xarchiver",
-    # "lightdm",
-    # "lightdm-gtk-greeter",
+    "xfce4",
+    "xfce4-goodies",
+    "xarchiver",
+    "lightdm",
+    "lightdm-gtk-greeter",
     # MATE
     # ====
-    "mate",
-    "mate-extra",
-    "lightdm",
+    # "mate",
+    # "mate-extra",
+    # "lightdm",
+    # "lightdm-gtk-greeter",
+
+    # video drivers
+    # =============
+    "xf86-video-amdgpu",
+    "nvidia-dkms", 
+    "nvidia-utils", 
+    "nvidia-settings", 
+    "nvidia-prime",
+    # "xf86-video-intel",
+    # "xf86-video-ati",
 
     # sound server
     # ============
@@ -148,7 +153,7 @@ packages = [
 
     # fonts
     # =====
-    "ttf-dejavu",
+    # "ttf-dejavu",
     # "ttf-inconsolata", "ttf-fira-mono", "ttf-fira-code", "ttf-dejavu",
     # "ttf-roboto", "noto-fonts", "ttf-ubuntu-font-family", "gnu-free-fonts",
     # "adobe-source-code-pro-fonts", "ttf-linux-libertine",
@@ -175,7 +180,8 @@ packages = [
     # "nodejs",
     # "npm",
     # "python-pynvim",
-    "redshift",
+    # "redshift",
+    "synapse",
     "python-virtualenv",
     "keepassxc",
     "gparted",
@@ -186,7 +192,7 @@ packages = [
     "cups",
     "asusctl",
     "archlinux-keyring"
-] + video_drivers
+]
 
 aur = [
     "google-chrome",

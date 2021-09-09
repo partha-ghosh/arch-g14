@@ -48,13 +48,15 @@ exec_cmd("pacman -Syyu " + " ".join(packages))
 exec_cmd(f"cd /tmp && sudo -u {username} git clone https://aur.archlinux.org/yay.git && cd yay && sudo -u {username} makepkg -si")
 exec_cmd(f"sudo -u {username} yay -S " + " ".join(aur))
 
-if bootloader == 'grub':
-    exec_cmd(
-        "grub-install --target=x86_64-efi --bootloader-id=GRUB --efi-directory=/boot" + (' --removable --recheck' if removable else '') 
-    )
-    with open("/etc/default/grub", "a") as f:
-        f.write("\nGRUB_DISABLE_OS_PROBER=false")
-    exec_cmd("grub-mkconfig -o /boot/grub/grub.cfg") 
+exec_cmd("asusctl -c 60")
+exec_cmd("asusctl graphics -m nvidia")
+
+exec_cmd(
+    "grub-install --target=x86_64-efi --bootloader-id=GRUB --efi-directory=/boot" + (' --removable --recheck' if removable else '') 
+)
+with open("/etc/default/grub", "a") as f:
+    f.write("\nGRUB_DISABLE_OS_PROBER=false")
+exec_cmd("grub-mkconfig -o /boot/grub/grub.cfg") 
 
 exec_cmd("systemctl enable " + " ".join(services))
 
