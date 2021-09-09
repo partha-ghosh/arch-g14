@@ -49,7 +49,6 @@ exec_cmd(f"cd /tmp && sudo -u {username} git clone https://aur.archlinux.org/yay
 exec_cmd(f"sudo -u {username} yay -S " + " ".join(aur))
 
 exec_cmd("asusctl -c 60")
-exec_cmd("asusctl graphics -m nvidia")
 
 exec_cmd(
     "grub-install --target=x86_64-efi --bootloader-id=GRUB --efi-directory=/boot" + (' --removable --recheck' if removable else '') 

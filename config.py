@@ -3,7 +3,7 @@ import os
 
 def exec_cmd(cmd):
     print("\n>>> " + cmd + "\n")
-    input("Press Enter")
+    #input("Press Enter")
     os.system(cmd)
 
 removable = False
@@ -59,7 +59,7 @@ packages = [
     # "aria2",
     "youtube-dl",
     "uget",
-    "filezilla",
+    # "filezilla",
     # "deluge",
     # "python-cairo",
 
@@ -96,6 +96,8 @@ packages = [
     "xfce4",
     "xfce4-goodies",
     "xarchiver",
+    "caja",
+    "network-manager-applet",
     "lightdm",
     "lightdm-gtk-greeter",
     # MATE
