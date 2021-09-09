@@ -8,6 +8,7 @@ def exec_cmd(cmd):
 
 removable = False
 format_home = False
+format_efi = False
 efi = "/dev/nvme0n1p1"
 root = "/dev/nvme0n1p2"
 home = "/dev/nvme0n1p5"
@@ -28,9 +29,9 @@ services = [
     "acpid.service",
     "NetworkManager.service",
     "avahi-daemon.service",
-    "gdm.service",
+    # "gdm.service",
     "bluetooth.service",
-    # "lightdm.service",
+    "lightdm.service",
     "cups.service",
     "fstrim.timer",
     "nvidia-suspend.service",
@@ -44,6 +45,7 @@ packages = [
     # ==========
     "grub",
     "efibootmgr",
+    "os-prober",
 
     # network manager
     # ===============
@@ -93,8 +95,8 @@ packages = [
     # ====================
     # GNOME
     # =====
-    "gnome",
-    "gnome-extra",
+    # "gnome",
+    # "gnome-extra",
     # XFCE
     # ====
     # "xfce4",
@@ -102,6 +104,11 @@ packages = [
     # "xarchiver",
     # "lightdm",
     # "lightdm-gtk-greeter",
+    # MATE
+    # ====
+    "mate",
+    "mate-extra",
+    "lightdm",
 
     # sound server
     # ============

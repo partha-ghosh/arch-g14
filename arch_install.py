@@ -5,7 +5,8 @@ from config import *
 exec_cmd("timedatectl set-ntp true")
 
 # format partitions
-exec_cmd("mkfs.fat -F32 " + efi)
+if format_efi:
+    exec_cmd("mkfs.fat -F32 " + efi)
 exec_cmd("mkfs.ext4 " + ('-O "^has_journal" ' if removable else "") + root)
 if format_home:
     exec_cmd("mkfs.ext4 " + ('-O "^has_journal" ' if removable else "") +home)
@@ -18,7 +19,9 @@ if home:
     exec_cmd("mkdir /mnt/home")
     exec_cmd("mount " + home + " /mnt/home")
 
-exec_cmd('''cat >> /etc/pacman.conf <<EOF
+with open("/etc/pacman.conf", "r") as f:
+    if "[g14]" not in f.read():
+        exec_cmd('''cat >> /etc/pacman.conf <<EOF
 [g14]
 SigLevel = DatabaseNever Optional TrustAll
 Server = https://arch.asus-linux.org
@@ -33,11 +36,11 @@ exec_cmd("genfstab -U /mnt >> /mnt/etc/fstab")
 
 exec_cmd("cp /etc/pacman.conf /mnt/etc/pacman.conf")
 if removable:
-    exec_cmd("mv mkinitcpio_removable.conf /mnt/etc/mkinitcpio.conf")
+    exec_cmd("cp mkinitcpio_removable.conf /mnt/etc/mkinitcpio.conf")
 else:
-    exec_cmd("mv mkinitcpio.conf /mnt/etc/mkinitcpio.conf")
-exec_cmd("mv chroot.py /mnt")
-exec_cmd("mv config.py /mnt")
+    exec_cmd("cp mkinitcpio.conf /mnt/etc/mkinitcpio.conf")
+exec_cmd("cp chroot.py /mnt")
+exec_cmd("cp config.py /mnt")
 exec_cmd("arch-chroot /mnt python ./chroot.py")
 exec_cmd("umount -R /mnt")
 exec_cmd("reboot")
