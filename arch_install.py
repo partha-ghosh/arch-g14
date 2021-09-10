@@ -42,5 +42,6 @@ else:
 exec_cmd("cp chroot.py /mnt")
 exec_cmd("cp config.py /mnt")
 exec_cmd("arch-chroot /mnt python ./chroot.py")
+exec_cmd("rm -rf /mnt/*.py && rm -rf /mnt/__pycache__")
 exec_cmd("umount -R /mnt")
 exec_cmd("reboot")
