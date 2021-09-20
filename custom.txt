@@ -1,0 +1,6 @@
+# ./local/share/applications/play.desktop
+[Desktop Entry]
+Name=Play
+Exec=prime-run mplayer -af scaletempo %U -sub *.srt
+Terminal=false
+Type=Application
