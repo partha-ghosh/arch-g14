@@ -1,6 +1,7 @@
 # arch-g14
 
 ## Configs
+### Better Font Rendering
 ```
 <?xml version='1.0'?>
 <!DOCTYPE fontconfig SYSTEM 'fonts.dtd'>
