@@ -162,6 +162,7 @@ packages = [
 
     # fonts
     # =====
+    "fontconfig",
     # "ttf-dejavu",
     # "ttf-inconsolata", "ttf-fira-mono", "ttf-fira-code", "ttf-dejavu",
     # "ttf-roboto", "noto-fonts", "ttf-ubuntu-font-family", "gnu-free-fonts",
