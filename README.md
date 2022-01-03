@@ -18,7 +18,7 @@
  </match>
  <match target="font">
   <edit mode="assign" name="hintstyle">
-   <const>hintslight</const>
+   <const>hintnone</const>
   </edit>
  </match>
  <match target="font">
@@ -30,6 +30,14 @@
   <edit mode="assign" name="lcdfilter">
    <const>lcddefault</const>
   </edit>
+ </match>
+ <match target="font">
+    <test name="weight" compare="more">
+        <const>medium</const>
+    </test>
+    <edit name="autohint" mode="assign">
+        <bool>false</bool>
+    </edit>
  </match>
  <dir>~/.fonts</dir>
 </fontconfig>
