@@ -2,6 +2,8 @@
 
 from config import *
 
+exec_cmd("su")
+exec_cmd("pacman -Sy archlinux-keyring")
 exec_cmd("timedatectl set-ntp true")
 
 # format partitions
