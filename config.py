@@ -202,12 +202,14 @@ packages = [
     "bluez-utils",
     "cups",
     "asusctl",
-    "archlinux-keyring"
+    "archlinux-keyring",
+    "arch-install-scripts"
 ]
 
 aur = [
     "google-chrome",
     "write_stylus",
     "spotify",
-    "zoom"
+    "zoom",
+    "anki"
 ]
