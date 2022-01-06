@@ -1,5 +1,4 @@
 import re
-import os
 
 from config import *
 
@@ -70,10 +69,10 @@ RuntimeMaxUse=30M
 
 # swapfile
 if not os.path.exists(f'/home/{username}/swapfile'):
-    os.system(f'dd if=/dev/zero of=/home/{username}/swapfile bs=1M count={16*1024} status=progress')
-    os.system(f'chmod 600 /home/{username}/swapfile')
-os.system(f'mkswap /home/{username}/swapfile')
-os.system(f'swapon /home/{username}/swapfile')
+    exec_cmd(f'dd if=/dev/zero of=/home/{username}/swapfile bs=1M count={16*1024} status=progress')
+    exec_cmd(f'chmod 600 /home/{username}/swapfile')
+exec_cmd(f'mkswap /home/{username}/swapfile')
+exec_cmd(f'swapon /home/{username}/swapfile')
 with open('/etc/fstab', 'a') as f:
     f.write(f'\n/home/{username}/swapfile none swap defaults 0 0')
 
