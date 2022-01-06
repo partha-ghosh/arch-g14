@@ -1,4 +1,5 @@
 import re
+import os
 
 from config import *
 
@@ -66,5 +67,14 @@ if removable:
 Storage=volatile
 RuntimeMaxUse=30M
 ''')
+
+# swapfile
+if not os.path.exists(f'/home/{username}/swapfile'):
+    os.system(f'dd if=/dev/zero of=/home/{username}/swapfile bs=1M count={16*1024} status=progress')
+    os.system(f'chmod 600 /home/{username}/swapfile')
+os.system(f'mkswap /home/{username}/swapfile')
+os.system(f'swapon /home/{username}/swapfile')
+with open('/etc/fstab', 'a') as f:
+    f.write(f'\n/home/{username}/swapfile none swap defaults 0 0')
 
 exec_cmd("exit")
