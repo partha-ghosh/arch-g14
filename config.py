@@ -211,5 +211,7 @@ aur = [
     "write_stylus",
     "spotify",
     "zoom",
-    "anki"
+    "anki",
+    "mint-themes",
+    "mint-y-icons",
 ]
