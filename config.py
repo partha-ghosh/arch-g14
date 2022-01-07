@@ -184,7 +184,7 @@ packages = [
     "texmacs",
     # "zathura", "zathura-pdf-poppler", "zathura-djvu", "zathura-ps",
     # "okular",
-    # "evince",
+    "evince",
 
     # misc
     # ====
