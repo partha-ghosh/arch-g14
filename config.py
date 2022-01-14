@@ -214,4 +214,5 @@ aur = [
     "spotify",
     "zoom",
     "anki",
+    "miniconda3",
 ]
