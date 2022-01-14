@@ -186,6 +186,7 @@ packages = [
     # "zathura", "zathura-pdf-poppler", "zathura-djvu", "zathura-ps",
     # "okular",
     "evince",
+    "xournalpp",
 
     # misc
     # ====
@@ -213,6 +214,4 @@ aur = [
     "spotify",
     "zoom",
     "anki",
-    "mint-themes",
-    "mint-y-icons",
 ]
