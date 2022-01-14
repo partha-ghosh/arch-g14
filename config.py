@@ -182,7 +182,7 @@ packages = [
     "pandoc",
     "calibre",
     "texmacs",
-    "libreoffice-fresh",
+    "libreoffice-fresh", "libreoffice-extension-writer2latex",
     # "zathura", "zathura-pdf-poppler", "zathura-djvu", "zathura-ps",
     # "okular",
     "evince",
