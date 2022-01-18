@@ -145,7 +145,7 @@ packages = [
     # "nano",
     # "neovim",
     "emacs",
-    "code",
+    # "code",
     # "atom",
 
     # web browsers
@@ -215,4 +215,5 @@ aur = [
     "zoom",
     "anki",
     "miniconda3",
+    "visual-studio-code-bin",
 ]
