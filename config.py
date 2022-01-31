@@ -100,7 +100,6 @@ packages = [
     "network-manager-applet",
     "lightdm",
     "lightdm-gtk-greeter",
-    "catfish",
     # MATE
     # ====
     # "mate",
@@ -195,6 +194,7 @@ packages = [
     # "npm",
     # "python-pynvim",
     # "redshift",
+    "catfish",
     "synapse",
     "python-virtualenv",
     "keepassxc",
