@@ -100,6 +100,7 @@ packages = [
     "network-manager-applet",
     "lightdm",
     "lightdm-gtk-greeter",
+    "catfish",
     # MATE
     # ====
     # "mate",
