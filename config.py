@@ -199,6 +199,7 @@ packages = [
     "python-virtualenv",
     "keepassxc",
     "gparted",
+    "neofetch",
     
     "acpid",
     "bluez",
