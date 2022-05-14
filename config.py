@@ -218,4 +218,7 @@ aur = [
     "anki",
     "miniconda3",
     "visual-studio-code-bin",
+    "jabref",
+    "mint-themes",
+    "mint-y-icons"
 ]
