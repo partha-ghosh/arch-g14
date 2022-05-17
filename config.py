@@ -51,6 +51,7 @@ packages = [
     "bash-completion",
     #"ranger",
     "p7zip",
+    "xclip",
 
     # file sharing
     # ==================================
