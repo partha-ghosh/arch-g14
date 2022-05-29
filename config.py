@@ -222,5 +222,6 @@ aur = [
     "jabref",
     "mint-themes",
     "mint-y-icons",
-    "texmacs-qt"
+    "texmacs-qt",
+    # "x2goclient",
 ]
