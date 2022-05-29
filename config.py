@@ -200,6 +200,7 @@ packages = [
     "keepassxc",
     "gparted",
     "neofetch",
+    "baobab",
     
     "acpid",
     "bluez",
