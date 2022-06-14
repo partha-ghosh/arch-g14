@@ -30,8 +30,8 @@ services = [
     "fstrim.timer",
     "nvidia-suspend.service",
     "nvidia-resume.service",
-    "nvidia-hibernate.service"
-
+    "nvidia-hibernate.service",
+    "ntpd.service",
 ]
 
 packages = [
@@ -208,7 +208,8 @@ packages = [
     "cups",
     "asusctl",
     "archlinux-keyring",
-    "arch-install-scripts"
+    "arch-install-scripts",
+    "ntp",
 ]
 
 aur = [
