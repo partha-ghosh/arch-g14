@@ -50,6 +50,7 @@ Turns off hinting, and sets the lcddefault filter style.
 SSH
 
 serveo
+https://nmilosev.svbtle.com/ssh-to-google-colaboratory-with-serveo-net
 ```
 import random, string, getpass
 
